@@ -97,7 +97,7 @@ export default function Project() {
                     <Card>
                         <CardContent>
                             <div className={classes.cardContent}>
-                                <div onClick={() => window.open("http://3.139.245.70")}>
+                                <div onClick={() => window.open("http://3.139.245.70：3000")}>
                                     <img src={project2} className={classes.container}/>
                                     <Typography style={{marginTop: "20px"}} variant='h4'>
                                         ONLINE SHOPPING<br/>
