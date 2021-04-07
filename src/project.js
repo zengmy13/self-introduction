@@ -74,7 +74,7 @@ export default function Project() {
                     <Card >
                         <CardContent>
                             <div className={classes.cardContent}>
-                                <div  onClick={() => window.open("http://the-project-2d6a9.web.app")}>
+                                <div  onClick={() => window.open("http://the-project-2d6a9.firebaseapp.com")}>
                                         <img src={project1} className={classes.container}/>
                                     <Typography style={{marginTop: "20px"}} variant='h4'>SOCIAL EVENTS<br/>
                                         (LEARNED FROM UDEMY)
