@@ -33,44 +33,6 @@ export default function Project() {
             width: "230px",
             borderRadius: "10px",
         },
-        show: {
-            position: "absolute",
-            left: 0,
-            top: 0,
-            transition: "all 1s",
-            background: 'gradient(linear, left top, right top, color-stop(31%, #0fb78c), color-stop(69%, #0fb78c))',
-            opacity: ".8",
-            transform: 'scale(1)',
-            width: "100%",
-            height: "100%",
-            borderRadius: "10px",
-        },
-        hide: {
-            position: "absolute",
-            left: 0,
-            top: 0,
-            transition: "all .8s",
-            background: 'gradient(linear, left top, right top, color-stop(31%, #0fb78c), color-stop(69%, #0fb78c))',
-            opacity: ".8",
-            transform: 'scale(0)',
-            width: "100%",
-            height: "100%",
-            borderRadius: "10px",
-        },
-        span: {
-            color: "white",
-            display: "inline-block",
-            height: '50px',
-            borderRadius: "50%",
-            width: "50px",
-            border: '1px solid #ffffff',
-            textAlign: "center",
-            cursor: "pointer",
-            position: "absolute",
-            left: "50%",
-            top: "50%",
-            transform: "translate(-50%,-50%)"
-        },
         aTag: {
             textDecoration: "none",
             color: "#000000",
@@ -78,7 +40,8 @@ export default function Project() {
         },
         cardContent: {
             textAlign: "center",
-            position:"relative"
+            position:"relative",
+            cursor:"pointer"
         },
     }))
     const classes = useStyles();
@@ -111,20 +74,8 @@ export default function Project() {
                     <Card >
                         <CardContent>
                             <div className={classes.cardContent}>
-                                <div >
-                                        <img src={project1} className={classes.container} name='one'
-                                             onMouseEnter={(e) => handleMouseEnter(e)}
-                                             onMouseLeave={(e) => handleMouseLeave(e)}/>
-                                    <div className={show.opacity && show.target === 'one' ? classes.show : classes.hide}>
-                                     <span className={classes.span}
-                                           onClick={() => window.open("http://the-project-2d6a9.web.app")}>
-                                    <i className='fas fa-search' style={{
-                                        fontSize: "20px",
-                                        color: "#fffffff",
-                                        lineHeight: "50px"
-                                    }}/>
-                                </span>
-                                    </div>
+                                <div  onClick={() => window.open("http://the-project-2d6a9.web.app")}>
+                                        <img src={project1} className={classes.container}/>
                                     <Typography style={{marginTop: "20px"}} variant='h4'>SOCIAL EVENTS<br/>
                                         (LEARNED FROM UDEMY)
                                     </Typography>
@@ -134,7 +85,7 @@ export default function Project() {
                                 </Typography>
                                 <Typography>
                                     <strong>Git:</strong>
-                                    <a className={classes.aTag}
+                                    <a className={classes.aTag} target='_blank'
                                        href='https://github.com/zengmy13/SocialEvent'>https://github.com/zengmy13/SocialEvent</a>
                                 </Typography>
                             </div>
@@ -146,19 +97,8 @@ export default function Project() {
                     <Card>
                         <CardContent>
                             <div className={classes.cardContent}>
-                                <div >
-                                    <img src={project2} className={classes.container}
-                                         name='two'
-                                         onMouseEnter={(e) => handleMouseEnter(e)}
-                                         onMouseLeave={(e) => handleMouseLeave(e)}/>
-                                    <div
-                                        className={show.opacity && show.target === 'two' ? classes.show : classes.hide}>
-                                <span className={classes.span}
-                                      onClick={() => window.open("http://3.139.245.70")}><i className='fas fa-search' style={{
-                                    fontSize: "20px",
-                                    color: "#fffffff", lineHeight: "50px"}}/>
-                                </span>
-                                    </div>
+                                <div onClick={() => window.open("http://3.139.245.70")}>
+                                    <img src={project2} className={classes.container}/>
                                     <Typography style={{marginTop: "20px"}} variant='h4'>
                                         ONLINE SHOPPING<br/>
                                         (LEARNED FROM UDEMY)
@@ -167,7 +107,7 @@ export default function Project() {
                                 <Typography style={{marginTop: "10px"}}>
                                     <span><strong>Skills used:</strong>Bootstrap,React,Hook,<br/>Redux,Mongodb,Express,Node,etc</span></Typography>
                                 <Typography>
-                                    <strong>Git: </strong><a className={classes.aTag} href='https://github.com/zengmy13/shopping'>https://github.com/zengmy13/shopping</a>
+                                    <strong>Git: </strong><a className={classes.aTag} target='_blank' href='https://github.com/zengmy13/shopping'>https://github.com/zengmy13/shopping</a>
                                 </Typography>
                             </div>
                         </CardContent>
@@ -179,7 +119,7 @@ export default function Project() {
                         This self-introduction website is done by myself,mainly using React and Material UI
                     </Typography>
                     <Typography>
-                        <strong>Git: </strong><a className={classes.aTag} href='https://github.com/zengmy13/shopping'>https://github.com/zengmy13/shopping</a>
+                        <strong>Git: </strong><a className={classes.aTag} target='_blank' href='https://github.com/zengmy13/self-introduction'>https://github.com/zengmy13/self-introduction</a>
                     </Typography>
                 </Grid>
 

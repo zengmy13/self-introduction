@@ -33,36 +33,65 @@ export default function Skill() {
                 padding: "0 0px",
             },
         },
-        bar: {
-            height: "3px",
-            background: "gradient(linear, left top, right top, color-stop(31%,#0fb78c ), color-stop(69%, #02566a))",
-            display: "block",
-            marginTop: "10px",
-            transition: "all 2s",
+        initialBar:{
+            '&::after':{
+                width:'0',
+                content:'""',
+                position:"absolute",
+                display: "block",
+                left:0,
+                bottom:0,
+                height: "3px",
+
+            }
+        },
+        main:{
+            position:"relative",
+           '&::after':{
+               content:'""',
+               position:"absolute",
+               display: "block",
+               left:0,
+               bottom:'-10px',
+               height: "3px",
+               background: "gradient(linear, left top, right top, color-stop(31%,#0fb78c ), color-stop(69%, #02566a))",
+               transition: "all 2s",
+           }
         },
         width1: {
-            width: `${345 * 0.92}px`,
+            '&::after':{
+                width: "95%",
+            }
         },
         width2: {
-            width: `${345 * 0.90}px`
+            '&::after':{
+                width: "90%",
+            }
         },
         width3: {
-            width: `${345 * 0.85}px`
+            '&::after':{
+                width: "85%",
+            }
         },
         width4: {
-            width: `${345 * 0.70}px`
+            '&::after':{
+                width: "70%",
+            }
         },
         width5: {
-            width: `${345 * 0.60}px`
+            '&::after':{
+                width: "60%",
+            }
         },
         width6: {
-            width: `${345 * 0.50}px`
+            '&::after':{
+                width: "50%",
+            }
         },
         width7: {
-            width: `${340 * 0.30}px`
-        },
-        initialBar: {
-            width: "0px",
+            '&::after':{
+                width: "30%",
+            }
         },
         span: {
             verticalAlign: "6px",
@@ -80,121 +109,100 @@ export default function Skill() {
         <>
             <Typography variant='h2' className={classes.title}>Personal Skill</Typography>
             <Divider/>
-            <Grid container className={classes.gridContainer} spacing={4}>
-                <Grid item sm={12} md={6} >
-                    <div>
+            <Grid container className={classes.gridContainer} spacing={5}>
+                <Grid item xs={12} md={6} >
+                    <div className={load? `${classes.main} ${classes.width1}`:classes.initialBar}>
                         <i className="fab fa-html5" aria-hidden="true" style={{
                             color: theme.palette.primary.main, fontSize: "25px"}}/>
                         <span className={classes.span}>HTML & CSS</span>
                         <span style={{float: "right"}}>95%</span>
-                        <b className={load ? ` ${classes.bar} ${classes.width1}` : classes.initialBar}
-                           data-percent="95%"></b>
                     </div>
                 </Grid>
-                <Grid item sm={12} md={6}>
-                    <div>
+                <Grid item xs={12} md={6}>
+                    <div className={load? `${classes.main} ${classes.width2}`:classes.initialBar}>
                         <i className="fab fa-react" aria-hidden="true" style={{
                             color: theme.palette.primary.main, fontSize: "25px"}}/>
                         <span className={classes.span}>React & Redux </span>
                         <span style={{float: "right"}}>90%</span>
-                        <b className={load ? ` ${classes.bar} ${classes.width2}` : classes.initialBar}
-                           data-percent="95%"></b>
                     </div>
                 </Grid>
 
-                <Grid item sm={12} md={6}>
-                    <div>
+                <Grid item xs={12} md={6}>
+                    <div className={load? `${classes.main} ${classes.width3}`:classes.initialBar}>
                         <i className="fab fa-js" aria-hidden="true" style={{
                             color: theme.palette.primary.main,
                             fontSize: "25px"}}/>
                         <span className={classes.span}>Javascript</span>
                         <span style={{float: "right"}}>85%</span>
-                        <b className={load ? ` ${classes.bar} ${classes.width3}` : classes.initialBar}
-                           data-percent="85%"></b>
                     </div>
                 </Grid>
 
-                <Grid item sm={12} md={6}>
-                    <div>
+                <Grid item xs={12} md={6}>
+                    <div className={load? `${classes.main} ${classes.width4}`:classes.initialBar}>
                         <i className="fab fa-node" aria-hidden="true" style={{
                             color: theme.palette.primary.main,
                             fontSize: "25px"}}/>
                         <span className={classes.span}>Node & Express</span>
                         <span style={{float: "right"}}>70%</span>
-                        <b className={load ? ` ${classes.bar} ${classes.width4}` : classes.initialBar}
-                           data-percent="95%"></b>
                     </div>
                 </Grid>
 
-                <Grid item sm={6}>
-                    <div>
+                <Grid item xs={12} md={6}>
+                    <div className={load? `${classes.main} ${classes.width4}`:classes.initialBar}>
                         <i className="fas fa-database" aria-hidden="true" style={{
                             color: theme.palette.primary.main,
                             fontSize: "25px"}}/>
                         <span className={classes.span}>Mongodb</span>
                         <span style={{float: "right"}}>70%</span>
-                        <b className={load ? ` ${classes.bar} ${classes.width4}` : classes.initialBar}
-                           data-percent="80%"></b>
                     </div>
                 </Grid>
 
-                <Grid item sm={6}>
-                    <div>
+                <Grid item xs={12} md={6}>
+                    <div className={load? `${classes.main} ${classes.width5}`:classes.initialBar}>
                         <i className="fab fa-google" aria-hidden="true" style={{
                             color: theme.palette.primary.main,
                             fontSize: "25px"}}/>
                         <span className={classes.span}>Firebase</span>
                         <span style={{float: "right"}}>60%</span>
-                        <b className={load ? ` ${classes.bar} ${classes.width5}` : classes.initialBar}
-                           data-percent="80%"></b>
                     </div>
                 </Grid>
 
-                <Grid item sm={6}>
-                    <div>
+                <Grid item xs={12} md={6}>
+                    <div className={load? `${classes.main} ${classes.width6}`:classes.initialBar}>
                         <i className="fab fa-jira" aria-hidden="true" style={{
                             color: theme.palette.primary.main,
                             fontSize: "25px"}}/>
                         <span className={classes.span}>Scrum</span>
                         <span style={{float: "right"}}>50%</span>
-                        <b className={load ? ` ${classes.bar} ${classes.width6}` : classes.initialBar}
-                           data-percent="80%"></b>
                     </div>
                 </Grid>
-
-                <Grid item sm={6}>
-                    <div>
+                <Grid item xs={12} md={6}>
+                    <div className={load? `${classes.main} ${classes.width7}`:classes.initialBar}>
                         <i className="fab fa-aws" aria-hidden="true" style={{
                             color: theme.palette.primary.main,
                             fontSize: "25px"}}/>
                         <span className={classes.span}>AWS</span>
                         <span style={{float: "right"}}>30%</span>
-                        <b className={load ? ` ${classes.bar} ${classes.width7}` : classes.initialBar}
-                           data-percent="80%"></b>
                     </div>
                 </Grid>
 
-                <Grid item sm={6}>
-                    <div>
+                <Grid item xs={12} md={6}>
+                    <div className={load? `${classes.main} ${classes.width7}`:classes.initialBar}>
                         <i className="fab fa-docker" aria-hidden="true" style={{
                             color: theme.palette.primary.main,
                             fontSize: "25px"}}/>
                         <span className={classes.span}>Docker</span>
                         <span style={{float: "right"}}>30%</span>
-                        <b className={load ? ` ${classes.bar} ${classes.width7}` : classes.initialBar}
-                           data-percent="80%"></b>
                     </div>
                 </Grid>
 
-                <Grid item sm={6}>
-                    <div>
+                <Grid item xs={12} md={6}>
+                    <div className={load? `${classes.main} ${classes.width7}`:classes.initialBar}>
                         <i className="fab fa-jenkins" aria-hidden="true" style={{
                             color: theme.palette.primary.main,
                             fontSize: "25px"}}/>
                         <span className={classes.span}>CI/CD</span>
                         <span style={{float: "right"}}>30%</span>
-                        <b className={load ? ` ${classes.bar} ${classes.width7}` : classes.initialBar}
-                           data-percent="80%"></b>
                     </div>
                 </Grid>
             </Grid>

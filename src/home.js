@@ -30,7 +30,7 @@ export default function Home() {
     const classes = useStyles();
     const theme=useTheme();
     return (
-        <>
+        <>x
             <div className={classes.img}>
                 <img src={Photo} style={{width: "160px", height: "250px"}}/>
             </div>
