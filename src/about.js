@@ -25,8 +25,19 @@ export default function About() {
         gridContainer: {
             marginTop: "50px",
             marginLeft: "40px",
-            [theme.breakpoints.down("sm")]:{
+            [theme.breakpoints.down("sm")]: {
                 marginLeft: "0px"
+            }
+        },
+        intro: {
+            paddingRight: "40px",
+            lineHeight: '2em',
+            '&:first-letter': {
+                fontSize: "1.5rem",
+                fontWeight: 300
+            },
+            [theme.breakpoints.down("sm")]: {
+                paddingRight: 0
             }
         },
         body: {
@@ -44,10 +55,14 @@ export default function About() {
             <Grid container className={classes.gridContainer} direction='column'>
                 <Grid item>
                     <Typography className={classes.intro}>
-                        Having mastered a lot of frontend programming skills such as
-                        react, html, css javasrcipt,mongodb,express,etc</Typography>
+                        I am a frontend developer with law background, having mastered a lot of programming skills such
+                        as
+                        Html, Css, Javascript, React, Redux, Node, MongoDB,etc by self-study. I am looking for
+                        internship or
+                        job opportunities as a frontend engineer now.
+                    </Typography>
                 </Grid>
-                <Grid container item style={{marginTop: "30px"}} direction='row' spacing={5}>
+                <Grid container item style={{marginTop: "20px"}} direction='row' spacing={5}>
                     <Grid item xs={12} md={6} className={classes.item}>
                         <span><strong>Name: </strong></span><span>Mengyi Zeng</span>
                     </Grid>

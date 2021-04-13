@@ -50,7 +50,7 @@ export const theme = createMuiTheme({
         MuiTab: {
             root: {
                 minWidth: "160px",
-                fontSize: "0.4rem",
+                fontSize: "0.7rem",
                 flex: 1,
                 padding: "6px 12px"
             },
